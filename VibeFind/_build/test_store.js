@@ -1,0 +1,14 @@
+const fs=require('fs'),vm=require('vm');
+const win={localStorage:{getItem(){return null},setItem(){}},addEventListener(){},matchMedia(){return{matches:false}},document:{readyState:'complete',addEventListener(){}},location:{search:''},URLSearchParams};
+win.window=win;vm.createContext(win);
+['js/data/config.js','js/data/experiences.js','js/data/photos.js','js/core/utils.js','js/core/wishlist.js','js/core/store.js'].forEach(f=>vm.runInContext(fs.readFileSync(f,'utf8'),win,{filename:f}));
+const S=win.VF.store;
+console.log('records',S.all.length,'priced',S.pricedCount,'showPrices',S.showPrices);
+const t=(q,sp={})=>{const r=S.query(Object.assign({q},sp),'best');console.log(JSON.stringify(q),r.length,r.slice(0,3).map(x=>x.name).join(' | '))};
+t('snooker');t('pool');t('VR');t('virtual reality');t('pickleball',{city:'tricity'});t('escape');t('ps5');t('box cricket');t('zirakpur');t('sector 10');t('xyzzy');t('kenangan');
+console.log('areas delhi',S.areas('delhi').length,'tricity specific',S.areas('tricity').length,S.areas('tricity').slice(0,3).map(a=>a.name+':'+a.count));
+console.log('cats',Object.keys(win.VF.CONFIG.categories).map(c=>c+':'+S.catCount(c)).join(' '),'del',S.catCount('gaming','delhi'),'chd',S.catCount('gaming','tricity'));
+console.log('featured',S.featured().length);
+win.VF.CONFIG.collections.forEach(c=>console.log(c.id,S.count(c.filter)));
+console.log(S.related(S.get('del-104')).map(x=>x.r.name+' ['+x.why+']').join('\n'));
+console.log(S.locationLabel(S.get('chd-048')).join(' · '),'|',S.locationLabel(S.get('chd-070')).join(' · '));

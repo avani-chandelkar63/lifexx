@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VibeFind · Data check</title>
+<style>
+body{font:15px/1.5 system-ui,sans-serif;background:#090B10;color:#F5F5F5;margin:0;padding:2rem;max-width:1100px;margin-inline:auto}
+h1{font-size:1.8rem;margin:0 0 .3rem}h2{font-size:1.05rem;margin:2rem 0 .6rem;color:#C6FF4D}
+.sum{display:flex;gap:1rem;flex-wrap:wrap;margin:1rem 0}.sum div{background:#151922;border-radius:12px;padding:.8rem 1.2rem}.sum b{font-size:1.6rem;display:block}
+table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #262c39;padding:.45rem .6rem;text-align:left;vertical-align:top;font-size:.9rem}
+.ok{color:#C6FF4D}.bad{color:#ff6b6b}.warn{color:#fbbf77}small{color:#A0A5B1}code{background:#151922;padding:.1rem .35rem;border-radius:4px}
+</style></head><body>
+<h1>VibeFind · Data check</h1><p><small>Open via Live Server (or any static server). Checks run against <code>js/data/experiences.js</code>. Records are never removed to make checks pass.</small></p>
+<div class="sum" id="sum"></div><h2>Checks</h2><table id="checks"></table>
+<h2>Category counts (source tags)</h2><table id="cats"></table>
+<h2>Review flags</h2><table id="flags"></table>
+<h2>Flagged records</h2><table id="flagged"></table>
+<script src="../js/data/config.js"></script><script src="../js/data/experiences.js"></script><script src="../js/data/photos.js"></script>
+<script src="../js/core/utils.js"></script><script src="../js/core/wishlist.js"></script><script src="../js/core/store.js"></script>
+<script src="data-check.js"></script>
+</body></html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VibeFind · Your city. Your people. Your next move. Things to do in Delhi & Chandigarh Tricity</title>
+<meta name="description" content="Gaming zones, sports turfs, escape rooms, VR, pottery and more. 258 places to try across Delhi, Chandigarh, Mohali, Zirakpur and Panchkula.">
+<meta name="theme-color" content="#090B10">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/motion.css">
+<link rel="stylesheet" href="css/cinematic.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/final.css">
+<link rel="stylesheet" href="css/innovations.css">
+<link rel="stylesheet" href="css/area-explorer.css">
+<link rel="stylesheet" href="css/final-experience.css">
+</head>
+<body class="page-home">
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" data-depth="0.15"></div><div class="hero__grid"></div>
+  <div class="hero-beam beam-a" aria-hidden="true"></div><div class="hero-beam beam-b" aria-hidden="true"></div><div class="hero-ring ring-a" aria-hidden="true"></div><div class="hero-ring ring-b" aria-hidden="true"></div>
+  <div class="hero__copy">
+    <p class="eyebrow" data-intro style="--d:0"><span>Delhi &amp; Chandigarh Tricity · <b id="heroCount" style="font-weight:inherit">258</b> places</span></p>
+    <h1 class="hero__title display" id="hero-title" aria-label="Your city. Your people. Your next move.">
+      <span class="ln" aria-hidden="true"><span style="--i:0">Your city.</span></span>
+      <span class="ln" aria-hidden="true"><span class="out" style="--i:1">Your people.</span></span>
+      <span class="ln" aria-hidden="true"><span style="--i:2">Your next <span class="accent">move.</span></span></span>
+    </h1>
+    <div class="hero__sub">
+      <p class="lede" data-intro style="--d:2">Discover experiences worth leaving your room for.</p>
+    </div>
+    <div class="search" data-intro style="--d:3">
+      <form id="searchForm" role="search" autocomplete="off">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg>
+        <label class="vh" for="q">Search experiences</label>
+        <input id="q" name="q" type="search" placeholder="Try “snooker”, “VR” or “Zirakpur”" role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list">
+        <button type="submit">Search</button>
+      </form>
+      <div class="suggest" id="suggest" role="listbox"></div>
+    </div>
+    <div class="chips" id="chips" data-intro style="--d:4"></div>
+  </div>
+  <div class="stage" id="stage" data-parallax="0.05">
+    <div class="stage__dots" id="stageDots"></div>
+    <div class="stage__cap" id="stageCap"><div><span></span><b></b></div><a href="explore.html">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+  <div class="orb" data-depth="0.5" aria-hidden="true"><div class="scene" id="orbScene"></div></div>
+  <div class="scroll-cue" aria-hidden="true"><i></i>Scroll</div>
+  <div class="hero__foot" aria-hidden="true"><div class="ticker" id="ticker"></div></div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="wrap">
+    <p class="big words">Bored of the same old plans? Pick a place, grab your people and try something you have never done before.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<!-- CITIES -->
+<section class="sec" id="cities" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Choose your city</p><h2 class="h2" data-reveal style="--d:1">Two regions. Pick one.</h2></div>
+      <p class="lede" data-reveal style="--d:2">Every listing is a selected venue from our student research. Coverage is partial, so treat it as a starting point and check before you go.</p></div>
+    <div class="cities" id="cityGrid"></div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="sec" id="featured" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Quick picks</p><h2 class="h2" data-reveal style="--d:1">Start with these.</h2></div>
+      <p class="lede" data-reveal style="--d:2">Hand-picked in our original research for specific moods. Artwork is designed category art, not a photo of the venue.</p></div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Featured experiences, scroll sideways"></div>
+    <div class="rail__hint"><span>Drag or scroll sideways</span><a class="btn" href="explore.html">All experiences <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- DISCOVERY: categories, moods and focused shortlists in one place -->
+<section class="sec discovery-mix" id="activities" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head"><div><p class="eyebrow" data-reveal>Find your frequency</p><h2 class="h2" data-reveal style="--d:1">What are you in the mood for?</h2></div>
+      <p class="lede" data-reveal style="--d:2">Start broad with an activity, or jump straight to a feeling or a more specific shortlist.</p></div>
+    <div class="catlist" id="catlist"></div>
+    <div class="discovery-mix__moods" data-reveal>
+      <div class="discovery-mix__subhead"><div><p class="eyebrow">Browse by mood</p><h3>Pick a feeling.</h3></div><span>Quick picks from the original research</span></div>
+      <div class="moods" id="moods"></div>
+    </div>
+    <div class="discovery-mix__collections" data-reveal>
+      <div class="discovery-mix__subhead"><div><p class="eyebrow">Curated shortlists</p><h3>Go a little deeper.</h3></div><span>Focused ways into the directory</span></div>
+      <div class="colls" id="colls"></div>
+    </div>
+  </div>
+  <div class="peek" id="peek" aria-hidden="true"><div class="scene"></div></div>
+</section>
+
+<!-- AREA EXPLORER: compact by default, complete when opened -->
+<section class="sec area-atlas-section" id="areas" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec__head area-atlas__heading">
+      <div><p class="eyebrow" data-reveal>Find your corner</p><h2 class="h2" data-reveal style="--d:1">Explore by neighbourhood.</h2></div>
+      <p class="lede" data-reveal style="--d:2">Start with popular areas, or open the searchable index when you have somewhere specific in mind.</p>
+    </div>
+    <div class="area-atlas" id="areaAtlas">
+      <article class="area-atlas__city area-atlas__city--delhi" data-area-city="delhi" data-reveal>
+        <header class="area-atlas__top"><span class="area-atlas__index">01 / DELHI NCT</span><span class="area-atlas__total"><b id="areasN-delhi">65</b> named areas</span></header>
+        <div class="area-atlas__headline"><h3>Delhi</h3><span>188 <small>listings</small></span></div>
+        <p class="area-atlas__desc">From Central &amp; Old Delhi to the South and beyond.</p>
+        <div class="area-atlas__featured" id="areas-delhi" aria-label="Popular Delhi areas"></div>
+        <details class="area-atlas__all"><summary><span>Open the full Delhi area index</span><span class="area-atlas__plus" aria-hidden="true">+</span></summary>
+          <div class="area-atlas__allbody"><label class="area-atlas__search"><span class="vh">Search Delhi areas</span><span aria-hidden="true">⌕</span><input type="search" data-area-search="delhi" placeholder="Search 65 areas" autocomplete="off"></label><div class="area-atlas__list" data-area-list="delhi"></div><p class="area-atlas__none" data-area-none="delhi" hidden>No areas match that search.</p></div>
+        </details>
+        <a class="area-atlas__citylink" href="delhi.html">Explore Delhi <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="area-atlas__city area-atlas__city--tricity" data-area-city="tricity" data-reveal>
+        <header class="area-atlas__top"><span class="area-atlas__index">02 / THE TRICITY</span><span class="area-atlas__total"><b id="areasN-tricity">34</b> specific areas</span></header>
+        <div class="area-atlas__headline"><h3>Chandigarh<br>Tricity</h3><span>70 <small>listings</small></span></div>
+        <p class="area-atlas__desc">Chandigarh, Mohali, Zirakpur and Panchkula.</p>
+        <div class="area-atlas__featured" id="areas-tricity" aria-label="Popular Chandigarh Tricity areas"></div>
+        <details class="area-atlas__all"><summary><span>Open the full Tricity area index</span><span class="area-atlas__plus" aria-hidden="true">+</span></summary>
+          <div class="area-atlas__allbody"><label class="area-atlas__search"><span class="vh">Search Tricity areas</span><span aria-hidden="true">⌕</span><input type="search" data-area-search="tricity" placeholder="Search Chandigarh, Mohali, Zirakpur..." autocomplete="off"></label><div class="area-atlas__list" data-area-list="tricity"></div><p class="area-atlas__none" data-area-none="tricity" hidden>No areas match that search.</p></div>
+        </details>
+        <p class="area-atlas__note">Some Tricity venues have only a town-level location, so they are not assigned to a specific area.</p>
+        <a class="area-atlas__citylink" href="chandigarh.html">Explore Chandigarh Tricity <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2 class="display" data-split aria-label="Pick a city. Start somewhere.">
+      <span class="ln" aria-hidden="true"><span style="--i:0">Pick a city.</span></span>
+      <span class="ln" aria-hidden="true"><span class="accent" style="--i:1">Start somewhere.</span></span>
+    </h2>
+    <div class="cta__row"><a class="btn btn--solid" href="delhi.html">Explore Delhi <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="chandigarh.html">Explore Chandigarh Tricity <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+</main>
+<noscript><p style="padding:2rem;text-align:center">VibeFind needs JavaScript to show its listings. <a href="explore.html" style="color:#C6FF4D">Open Explore</a></p></noscript>
+
+<script src="js/data/config.js" defer></script>
+<script src="js/data/experiences.js" defer></script>
+<script src="js/data/photos.js" defer></script>
+<script src="js/core/utils.js" defer></script>
+<script src="js/core/wishlist.js" defer></script>
+<script src="js/core/store.js" defer></script>
+<script src="js/ui/scenes.js" defer></script>
+<script src="js/ui/cards.js" defer></script>
+<script src="js/ui/nav.js" defer></script>
+<script src="js/motion/reveal.js" defer></script>
+<script src="js/motion/parallax.js" defer></script>
+<script src="js/motion/cursor.js" defer></script>
+<script src="js/motion/transitions.js" defer></script>
+<script src="js/motion/polish.js" defer></script>
+<script src="js/motion/shuffle.js" defer></script>
+<script src="js/pages/home.js" defer></script>
+</body>
+</html>

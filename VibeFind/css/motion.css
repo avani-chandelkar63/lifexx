@@ -1,0 +1,40 @@
+/* Reveal states. Without JS (no .js class on <html>) everything is visible. */
+.js [data-reveal]{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease-out),transform 1.1s var(--ease-out);transition-delay:calc(var(--d,0) * 90ms)}
+.js [data-reveal].is-in{opacity:1;transform:none}
+.js [data-reveal="fade"]{transform:none}
+.js [data-reveal="mask"]{opacity:1;transform:none;clip-path:inset(0 0 99.5% 0);transition:clip-path 1.4s var(--ease-io);transition-delay:calc(var(--d,0) * 90ms)}
+.js [data-reveal="mask"].is-in{clip-path:inset(0)}
+.js [data-reveal="mask"] .scene{transform:scale(1.25);transition:transform 2s var(--ease-out)}
+.js [data-reveal="mask"].is-in .scene{transform:none}
+/* line/word split */
+.js .ln>span,.js .ln>.w{display:inline-block;transform:translateY(112%);transition:transform 1.2s var(--ease-out);transition-delay:calc(var(--i,0) * 110ms + var(--base,0ms))}
+.js .is-in .ln>span,.js .is-in .ln>.w,.js .ln.is-in>span{transform:none}
+.words .w{display:inline-block;opacity:.16;transition:opacity .6s}
+.words .w.is-lit{opacity:1}
+.words{opacity:1!important}
+/* hero intro */
+.js .hero [data-intro]{opacity:0;transform:translateY(24px);transition:opacity 1.2s var(--ease-out),transform 1.2s var(--ease-out);transition-delay:calc(900ms + var(--d,0) * 120ms)}
+.js.is-ready .hero [data-intro]{opacity:1;transform:none}
+.js .hero .stage{clip-path:inset(100% 0 0 0);transition:clip-path 1.8s var(--ease-io) .15s}
+.js.is-ready .hero .stage{clip-path:inset(0)}
+.js .hero .orb{opacity:0;transform:scale(.4);transition:opacity 1s .9s,transform 1.4s var(--ease-out) .9s}
+.js.is-ready .hero .orb{opacity:1;transform:none}
+.js .hero__title .ln>span{transition-delay:calc(var(--i,0) * 140ms + 250ms)}
+.js.is-ready .hero__title .ln>span{transform:none}
+/* page transitions */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vt-out .45s var(--ease-io) both}
+::view-transition-new(root){animation:vt-in .7s var(--ease-out) both}
+@keyframes vt-out{to{opacity:0;transform:scale(.98)}}
+@keyframes vt-in{from{opacity:0;transform:translateY(24px)}}
+.wipe.is-in{visibility:visible;animation:wipein .65s var(--ease-io) forwards}
+.wipe.is-out{transform:translateY(0);animation:wipeout .8s var(--ease-io) forwards}
+@keyframes wipein{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@keyframes wipeout{from{transform:translateY(0)}to{transform:translateY(-100%)}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0ms!important}
+  .js [data-reveal],.js .ln>span,.js .ln>.w,.js .hero [data-intro],.words .w{opacity:1!important;transform:none!important;clip-path:none!important}
+  .ticker{animation:none}
+  .stage__slide{clip-path:none!important}
+}

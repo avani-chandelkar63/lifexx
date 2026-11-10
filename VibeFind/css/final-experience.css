@@ -1,0 +1,63 @@
+/* VibeFind final experience pass — reduce repetition, clarify discovery, retain the cinematic identity. */
+
+/* A single discovery chapter combines broad categories, moods and curated shortlists. */
+.discovery-mix{padding-bottom:clamp(4.5rem,8vw,8rem)}
+.discovery-mix__moods,.discovery-mix__collections{margin-top:clamp(2.8rem,5vw,5rem);padding-top:clamp(1.6rem,3vw,2.4rem);border-top:1px solid rgba(167,139,250,.18)}
+.discovery-mix__subhead{display:flex;justify-content:space-between;align-items:flex-end;gap:1.4rem;margin-bottom:1.2rem}
+.discovery-mix__subhead .eyebrow{margin:0 0 .45rem;color:#A78BFA}
+.discovery-mix__subhead h3{font:700 clamp(1.5rem,3vw,2.4rem)/1 var(--font-display);letter-spacing:-.06em;margin:0}
+.discovery-mix__subhead>span{color:#858d9e;font-size:.72rem;text-align:right;max-width:28ch;line-height:1.5}
+.discovery-mix .moods{display:flex;flex-wrap:wrap;gap:.55rem}
+.discovery-mix .mood{font:600 .78rem/1.2 var(--font-body);letter-spacing:0;padding:.68rem .9rem;gap:.45rem;border-radius:999px;border-color:rgba(167,139,250,.22);background:rgba(255,255,255,.025);color:#e7e5ed}
+.discovery-mix .mood sup{font:600 .64rem var(--font-body);color:#A78BFA}
+.discovery-mix .mood::before{background:rgba(139,92,246,.25)}
+.discovery-mix .mood:hover{color:#fff;border-color:#8B5CF6}
+.discovery-mix .mood:hover sup{color:#C6FF4D}
+.discovery-mix .mood:nth-child(3n+2){margin-left:0}
+.discovery-mix .colls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem}
+.discovery-mix .coll,.discovery-mix .coll:nth-child(n){grid-column:auto;min-height:174px;border-radius:18px;padding:1rem 1.1rem}
+.discovery-mix .coll:nth-child(1),.discovery-mix .coll:nth-child(6){min-height:174px}
+.discovery-mix .coll::after{background:linear-gradient(180deg,rgba(5,5,9,.08),rgba(5,5,9,.88))}
+.discovery-mix .coll .scene{opacity:.8}
+.discovery-mix .coll__c{font-size:.58rem;letter-spacing:.12em;padding:.32rem .6rem}
+.discovery-mix .coll h3{font-size:clamp(1.15rem,2vw,1.65rem);letter-spacing:-.045em}
+.discovery-mix .coll p{font-size:.76rem;line-height:1.5;margin-top:.28rem;max-width:30ch;color:#c4c3ce}
+
+/* Keep the area index compact until a visitor asks for the full list. */
+.area-atlas__city{transition:border-color .28s,transform .35s,box-shadow .35s}
+.area-atlas__city:hover{border-color:rgba(167,139,250,.36);box-shadow:0 28px 90px rgba(0,0,0,.26),0 0 55px rgba(109,40,217,.07)}
+.area-atlas__all summary{min-height:48px}
+.area-atlas__item:focus-visible,.area-atlas__feature:focus-visible,.area-atlas__citylink:focus-visible{outline:2px solid #A78BFA;outline-offset:3px}
+
+/* Five quick area shortcuts are enough; the searchable full index remains in directory filters. */
+.strip__intro{min-width:125px}
+.strip__row{scroll-snap-type:x proximity;scroll-padding-inline:.5rem}
+.strip__chip{scroll-snap-align:start}
+.strip__chip:focus-visible,.strip__all:focus-visible{outline:2px solid #A78BFA;outline-offset:3px}
+.coverage-inline{max-width:58ch;margin:1rem 0 0;color:#828b9b;font-size:.72rem;line-height:1.55}
+
+/* A smaller and calmer floating discovery tool: only mounted on discovery pages. */
+.vf-shuffle-launch{z-index:42;box-shadow:0 14px 44px rgba(0,0,0,.38),0 0 28px rgba(109,40,217,.12)}
+.vf-shuffle-launch:focus-visible{outline:2px solid #C6FF4D;outline-offset:4px}
+
+/* Stronger keyboard focus and a consistent reduced-motion fallback. */
+a:focus-visible,button:focus-visible,[role="button"]:focus-visible,summary:focus-visible{outline:2px solid #A78BFA;outline-offset:3px}
+@media(max-width:900px){
+  .discovery-mix .colls{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+  .discovery-mix__subhead{align-items:flex-start;flex-direction:column;gap:.35rem}
+  .discovery-mix__subhead>span{text-align:left;max-width:none}
+  .discovery-mix .colls{grid-template-columns:1fr 1fr;gap:.55rem}
+  .discovery-mix .coll,.discovery-mix .coll:nth-child(n){min-height:148px;padding:.8rem;border-radius:15px}
+  .discovery-mix .coll h3{font-size:1.08rem}
+  .discovery-mix .coll p{font-size:.68rem}
+  .coverage-inline{font-size:.67rem}
+}
+@media(max-width:390px){
+  .discovery-mix .colls{grid-template-columns:1fr}
+  .discovery-mix .coll,.discovery-mix .coll:nth-child(n){min-height:128px}
+}
+@media(prefers-reduced-motion:reduce){
+  .area-atlas__city{transition:none}
+}

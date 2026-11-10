@@ -1,0 +1,64 @@
+/* VibeFind area explorer — compact by default, complete on demand. */
+.area-atlas-section{position:relative;overflow:hidden}
+.area-atlas-section:before{content:"";position:absolute;width:58vw;max-width:780px;aspect-ratio:1;right:-18vw;top:5%;border-radius:50%;border:1px solid rgba(167,139,250,.09);box-shadow:0 0 0 54px rgba(139,92,246,.018),0 0 0 108px rgba(139,92,246,.012);pointer-events:none}
+.area-atlas__heading{margin-bottom:clamp(1.6rem,3vw,2.6rem)}
+.area-atlas{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.2vw,2rem);position:relative}
+.area-atlas__city{position:relative;isolation:isolate;overflow:hidden;padding:clamp(1.3rem,2.8vw,2.3rem);border:1px solid rgba(167,139,250,.18);border-radius:clamp(22px,3vw,34px);background:linear-gradient(145deg,rgba(21,25,34,.94),rgba(9,11,16,.97));box-shadow:0 24px 80px rgba(0,0,0,.18)}
+.area-atlas__city:before{content:"";position:absolute;z-index:-1;width:23rem;aspect-ratio:1;border-radius:50%;right:-11rem;top:-12rem;background:radial-gradient(circle,rgba(139,92,246,.2),transparent 68%);pointer-events:none}
+.area-atlas__city--tricity:before{background:radial-gradient(circle,rgba(167,139,250,.19),transparent 68%)}
+.area-atlas__top{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(245,245,245,.1)}
+.area-atlas__index{font-size:.68rem;letter-spacing:.17em;color:#A78BFA;font-weight:700}
+.area-atlas__total{font-size:.76rem;color:#A0A5B1}.area-atlas__total b{font:700 1rem var(--font-display);color:#F5F5F5;margin-right:.25rem}
+.area-atlas__headline{display:flex;align-items:flex-end;justify-content:space-between;gap:1rem;margin:1.5rem 0 .4rem}
+.area-atlas__headline h3{font:700 clamp(2.7rem,6vw,5.6rem)/.86 var(--font-display);letter-spacing:-.075em}
+.area-atlas__headline>span{font:600 1.4rem var(--font-display);white-space:nowrap;color:#A78BFA}.area-atlas__headline>span small{display:block;text-align:right;font:500 .62rem var(--font-body);text-transform:uppercase;letter-spacing:.15em;color:#A0A5B1}
+.area-atlas__desc{font-size:.86rem;color:#A0A5B1;line-height:1.6;margin:1rem 0 1.35rem}
+.area-atlas__featured{display:grid;gap:.45rem}
+.area-atlas__feature{display:grid;grid-template-columns:2rem minmax(0,1fr) auto;align-items:center;gap:.85rem;padding:.75rem .8rem;border:1px solid transparent;border-radius:13px;background:rgba(255,255,255,.025);transition:background .25s,border-color .25s,transform .25s}
+.area-atlas__feature:hover{transform:translateX(4px);background:rgba(139,92,246,.08);border-color:rgba(167,139,250,.2)}
+.area-atlas__rank{align-self:start;padding-top:.14rem;font:600 .68rem var(--font-display);color:#777f91}
+.area-atlas__featurecopy{display:grid;gap:.1rem;min-width:0}
+.area-atlas__featurecopy b{font:600 .98rem var(--font-display);letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.area-atlas__featurecopy small{font-size:.68rem;color:#8992a3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.area-atlas__featurecopy i{display:block;width:100%;height:2px;margin-top:.35rem;border-radius:9px;background:linear-gradient(90deg,#8B5CF6 var(--area-fill),rgba(245,245,245,.08) var(--area-fill))}
+.area-atlas__count{font:700 .9rem var(--font-display);color:#F5F5F5;text-align:right;white-space:nowrap}.area-atlas__count small{display:block;font:500 .58rem var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:#858c9a}
+.area-atlas__all{margin-top:1rem;border-top:1px solid rgba(245,245,245,.1);border-bottom:1px solid rgba(245,245,245,.1)}
+.area-atlas__all summary{display:flex;align-items:center;justify-content:space-between;gap:1rem;cursor:pointer;list-style:none;padding:1rem 0;color:#d9d9e3;font-size:.82rem;font-weight:600}
+.area-atlas__all summary::-webkit-details-marker{display:none}
+.area-atlas__plus{display:grid;place-items:center;width:25px;height:25px;border:1px solid rgba(167,139,250,.35);border-radius:50%;color:#A78BFA;font-size:1.1rem;transition:transform .3s,background .3s}
+.area-atlas__all[open] .area-atlas__plus{transform:rotate(45deg);background:rgba(139,92,246,.16)}
+.area-atlas__allbody{padding:.1rem 0 1rem;animation:area-open .3s ease both}
+.area-atlas__search{display:flex;align-items:center;gap:.65rem;padding:.15rem .9rem;border:1px solid rgba(167,139,250,.24);border-radius:99px;background:rgba(5,5,9,.55);color:#A78BFA}
+.area-atlas__search>span:last-of-type{font-size:1.2rem}.area-atlas__search input{width:100%;min-width:0;padding:.7rem 0;border:0;outline:0;background:transparent;color:#F5F5F5;font:inherit;font-size:.8rem}.area-atlas__search input::placeholder{color:#737c8c}
+.area-atlas__list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;margin-top:.8rem;max-height:270px;overflow:auto;padding-right:.2rem;scrollbar-color:#51416e transparent;scrollbar-width:thin}
+.area-atlas__item{display:flex;align-items:center;justify-content:space-between;gap:.5rem;min-width:0;padding:.55rem .65rem;border:1px solid rgba(245,245,245,.07);border-radius:10px;background:rgba(255,255,255,.025);transition:border-color .2s,background .2s}
+.area-atlas__item[hidden]{display:none}.area-atlas__item:hover{border-color:rgba(167,139,250,.4);background:rgba(139,92,246,.09)}
+.area-atlas__item>span{display:grid;min-width:0}.area-atlas__item b{font-size:.72rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.area-atlas__item small{font-size:.58rem;color:#7e8797;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.area-atlas__item em{flex:none;font:600 .7rem var(--font-display);font-style:normal;color:#A78BFA}
+.area-atlas__none{font-size:.75rem;color:#A0A5B1;padding:.8rem 0}.area-atlas__note{margin:.7rem 0 0;color:#828b9b;font-size:.68rem;line-height:1.55}
+.area-atlas__citylink{display:flex;justify-content:space-between;align-items:center;margin-top:1rem;padding-top:.4rem;color:#cfc4ff;font:600 .82rem var(--font-display);letter-spacing:.01em}.area-atlas__citylink span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(139,92,246,.16);transition:transform .25s,background .25s}.area-atlas__citylink:hover span{transform:translate(3px,-3px);background:#6D28D9}
+@keyframes area-open{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:none}}
+
+/* City-page quick area finder: horizontal, curated and low-noise. */
+.strip{position:relative;border-block:1px solid rgba(167,139,250,.13);padding:.8rem 0;background:linear-gradient(90deg,rgba(139,92,246,.06),rgba(9,11,16,.35) 40%,rgba(109,40,217,.045))}
+.strip__wrap{display:flex;align-items:center;gap:1rem;min-width:0}
+.strip__intro{flex:0 0 auto;display:grid;gap:.08rem;min-width:140px}
+.strip__lab{font-size:.59rem;letter-spacing:.17em;text-transform:uppercase;color:#A78BFA;font-weight:700}
+.strip__intro strong{font:600 .82rem var(--font-display);color:#F5F5F5}
+.strip__row{display:flex;flex:1;min-width:0;gap:.45rem;overflow-x:auto;scrollbar-width:none;padding:.25rem .1rem;align-items:center}
+.strip__row::-webkit-scrollbar{display:none}
+.strip__chip{display:inline-flex;align-items:center;gap:.45rem;white-space:nowrap;border:1px solid rgba(167,139,250,.18);border-radius:999px;background:rgba(255,255,255,.035);padding:.48rem .72rem;color:#c8c9d2;font-size:.7rem;transition:background .22s,border-color .22s,color .22s,transform .22s}
+.strip__chip small{display:inline-grid;place-items:center;min-width:1.1rem;height:1.1rem;padding:0 .25rem;border-radius:99px;background:rgba(167,139,250,.14);color:#C4B5FD;font-size:.58rem}
+.strip__chip:hover,.strip__chip.is-on{background:rgba(139,92,246,.17);border-color:#8B5CF6;color:#F5F5F5;transform:translateY(-1px)}
+.strip__chip.is-on small{background:#8B5CF6;color:#fff}
+.strip__all{flex:0 0 auto;display:inline-flex;align-items:center;gap:.4rem;padding:.6rem .8rem;border:1px solid rgba(167,139,250,.3);border-radius:999px;color:#E4DAFF;font-size:.68rem;font-weight:600;white-space:nowrap;transition:background .2s,border-color .2s}
+.strip__all:hover{background:rgba(139,92,246,.12);border-color:#8B5CF6}.strip__all span{color:#C6FF4D;font-size:.9rem}
+
+/* Compact, searchable area filter inside the directory. */
+.arealist{display:grid;grid-template-columns:1fr 1fr;gap:.35rem;max-height:270px;padding:.25rem .1rem .25rem 0}
+.arow{align-items:center;min-width:0;padding:.48rem .55rem;border:1px solid rgba(245,245,245,.07);background:rgba(255,255,255,.02);border-radius:9px;font-size:.74rem;line-height:1.3}
+.arow span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.arow small{flex:none;display:grid;place-items:center;min-width:1.25rem;height:1.25rem;border-radius:99px;background:rgba(167,139,250,.12);color:#C4B5FD;font-size:.62rem}
+.arow:hover:not(:disabled){border-color:rgba(167,139,250,.4);background:rgba(139,92,246,.09)}.arow.is-on{border-color:#8B5CF6;background:rgba(139,92,246,.17);color:#F5F5F5}.arow.is-on small{background:#8B5CF6;color:white}
+@media(max-width:900px){.area-atlas{grid-template-columns:1fr}.area-atlas__city{padding:1.5rem}.area-atlas__headline h3{font-size:clamp(3rem,11vw,5rem)}}
+@media(max-width:760px){.strip__wrap{align-items:flex-start;flex-wrap:wrap;gap:.45rem .8rem}.strip__intro{min-width:100%;display:flex;align-items:baseline;gap:.6rem}.strip__row{order:2;flex:1 1 100%;margin:0 -.1rem}.strip__all{order:3;margin-left:auto}.area-atlas__list{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.area-atlas__city{padding:1.2rem}.area-atlas__list{grid-template-columns:1fr}.area-atlas__feature{padding:.68rem .5rem;gap:.55rem}.area-atlas__headline h3{font-size:2.8rem}.strip__all{font-size:.64rem}}
+@media(prefers-reduced-motion:reduce){.area-atlas__feature,.area-atlas__plus,.area-atlas__citylink span{transition:none}.area-atlas__allbody{animation:none}}

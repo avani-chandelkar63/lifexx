@@ -1,0 +1,30 @@
+VIBEFIND — START HERE
+====================
+
+1. Extract the complete ZIP. Do not preview the website from inside the compressed ZIP.
+2. Open the inner folder named VibeFind in Visual Studio Code. It must contain index.html, delhi.html and chandigarh.html side by side.
+3. If needed, install the VS Code extension named Live Server.
+4. Right-click index.html and choose Open with Live Server.
+5. Use the top navigation or city panels to open Delhi and Chandigarh Tricity.
+6. Open a venue card to see its dynamic Experience Detail page.
+7. Open tools/data-check.html through Live Server to run the 43 original data checks.
+
+CUSTOM CURSOR
+- Desktop mouse users get one custom VibeFind cursor with an ultraviolet ring, lime core and contextual hover labels.
+- It does not block clicks. Touch devices and reduced-motion settings use native cursor behaviour.
+
+DISCOVERY
+- Vibe Shuffle appears on Home, Explore, Delhi and Tricity pages after the visitor starts scrolling, as a compact orbital shortcut so it does not cover the hero.
+- The Area Explorer shows popular areas first; the complete searchable index opens on demand.
+- City pages show five quick area shortcuts. Use Find another area to open the complete directory Area filter.
+
+IMPORTANT
+- Static HTML/CSS/vanilla JavaScript. No npm install or build command is needed.
+- Dataset: 258 source records (188 Delhi, 70 Chandigarh Tricity).
+- Contact prepares a message to copy; it does not send email or save to a server.
+- Google Fonts need internet access; system-font fallbacks are included.
+- Artwork is designed category illustration, not venue photography.
+
+MAIN PAGES
+index.html | explore.html | delhi.html | chandigarh.html
+experience.html | about.html | contact.html

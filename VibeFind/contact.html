@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Suggest a place · VibeFind</title>
+<meta name="description" content="Suggest an activity or venue for VibeFind to research.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090B10">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/motion.css">
+<link rel="stylesheet" href="css/cinematic.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/detail-pages.css">
+<link rel="stylesheet" href="css/final.css">
+<link rel="stylesheet" href="css/innovations.css">
+<link rel="stylesheet" href="css/final-experience.css">
+</head>
+<body class="page-contact" data-page="contact">
+<main id="main">
+  <section class="contact-hero">
+    <div class="wrap"><p class="eyebrow" data-reveal>Help us discover more</p><p class="lede" data-reveal style="margin-top:1rem">Know a place that belongs on the radar?</p></div>
+  </section>
+  <section class="contact-layout wrap">
+    <aside class="contact-aside" data-reveal>
+      <p class="eyebrow">Suggest a spot</p>
+      <h1>Put it on<br><em>our radar.</em></h1>
+      <p>Send us a place to research. Share what you know, and include a link if you have one.</p>
+      <div class="contact-aside__note">VibeFind is a frontend-only student project. This form does not send information to a server. It prepares a message that you can copy and share with the team.</div>
+    </aside>
+    <form class="contact-form" id="suggestForm" novalidate data-reveal>
+      <div class="form-grid">
+        <div class="form-field"><label for="contactName">Your name *</label><input id="contactName" name="name" autocomplete="name" required maxlength="80" placeholder="Name"></div>
+        <div class="form-field"><label for="contactEmail">Your email <span class="form-help">(optional)</span></label><input id="contactEmail" name="email" type="email" autocomplete="email" maxlength="120" placeholder="you@example.com"></div>
+        <div class="form-field form-field--full"><label for="venueName">Place / venue name *</label><input id="venueName" name="venue" required maxlength="140" placeholder="What's the place called?"></div>
+        <div class="form-field"><label for="region">City / region *</label><select id="region" name="region" required><option value="">Choose a region</option><option>Delhi</option><option>Chandigarh</option><option>Mohali / Kharar</option><option>Zirakpur</option><option>Panchkula</option><option>Other</option></select></div>
+        <div class="form-field"><label for="area">Area / sector</label><input id="area" name="area" maxlength="100" placeholder="Neighbourhood or sector"></div>
+        <div class="form-field form-field--full"><label for="venueLink">Website or useful link</label><input id="venueLink" name="link" type="url" maxlength="500" placeholder="https://..."><span class="form-help">Optional. A venue page, map link or reliable listing is helpful.</span></div>
+        <div class="form-field form-field--full"><label for="reason">What can people do there? *</label><textarea id="reason" name="reason" required minlength="12" maxlength="1500" placeholder="Tell us about the activity or experience..."></textarea></div>
+      </div>
+      <div class="form-actions"><button class="btn btn--solid" type="submit">Prepare suggestion <span aria-hidden="true">↗</span></button><button class="btn btn--ghost" type="reset" id="resetSuggestion">Clear form</button></div>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+      <div class="form-copy" id="copyBox"><div class="form-field"><label for="copyText">Your prepared message</label><textarea id="copyText" readonly></textarea></div><div class="form-actions"><button type="button" class="btn btn--solid" id="copyBtn">Copy message</button><a class="btn btn--ghost" id="mailBtn" href="#" hidden>Open email app</a></div></div>
+      <p class="form-disclaimer">Submitting here only prepares a message in your browser. It does not add a venue to the live directory or send an email automatically.</p>
+    </form>
+  </section>
+</main>
+<script src="js/data/config.js" defer></script>
+<script src="js/data/experiences.js" defer></script>
+<script src="js/data/photos.js" defer></script>
+<script src="js/core/utils.js" defer></script>
+<script src="js/core/wishlist.js" defer></script>
+<script src="js/core/store.js" defer></script>
+<script src="js/ui/scenes.js" defer></script>
+<script src="js/ui/cards.js" defer></script>
+<script src="js/ui/nav.js" defer></script>
+<script src="js/motion/reveal.js" defer></script>
+<script src="js/motion/parallax.js" defer></script>
+<script src="js/motion/cursor.js" defer></script>
+<script src="js/motion/transitions.js" defer></script>
+<script src="js/motion/polish.js" defer></script>
+<script src="js/motion/shuffle.js" defer></script>
+<script src="js/pages/contact.js" defer></script>
+</body>
+</html>
